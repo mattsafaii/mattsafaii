@@ -1,51 +1,57 @@
 <script lang="ts">
-	import { formatDate } from '$lib/utils'
 	import * as config from '$lib/config'
-
+	import PostsList from '$lib/components/PostsList.svelte'
+	import Newsletter from '$lib/components/Newsletter.svelte'
+	import Connect from '$lib/components/Connect.svelte'
 	let { data } = $props()
+
+	const ventures = [
+		{
+			name: 'MGENCY',
+			description: 'Indie product studio',
+			link: 'https://mgency.com'
+		},
+		{
+			name: 'YouTube | Matt Safaii',
+			description: 'Aesthetic tech videos',
+			link: 'https://mgency.com'
+		},
+		{
+			name: 'Zonebrite Solutions',
+			description: 'Local surveillance installation services',
+			link: 'https://zonebrite.com'
+		},
+	]
 </script>
 
 <svelte:head>
 	<title>{config.title}</title>
 </svelte:head>
 
-<section>
-	<ul class="posts">
-		{#each data.posts as post}
-			<li class="post">
-				<a href={post.slug} class="title">{post.title}</a>
-				<p class="date">{formatDate(post.date)}</p>
-				<p class="description">{post.description}</p>
-			</li>
-		{/each}
-	</ul>
+<section class="space-y-4">
+	<h1>Hi. I'm Matt. <br> Designer from Los Angeles</h1>
+	<p>Currently, I'm designing at the visionOS team at Apple and building simple and functional Framer templates on the side.</p>
+	<!-- <div class="flex gap-2">
+		<a href="#" class="button">About me</a>
+		<a href="#" class="button">Email me</a>
+	</div> -->
 </section>
 
-<style>
-	.posts {
-		display: grid;
-		gap: var(--size-7);
+<Newsletter />
 
-		.post {
-			max-inline-size: var(--size-content-3);
+<section class="space-y-4">
+	<div>
+		<h2>Ventures</h2>
+		<p>Businesses I'm actively working on</p>
+	</div>
+	{#each ventures as venture}
+		<div class="list-item">
+			<h3 class="leading-6">{venture.name}</h3>
+			<span>{venture.description}</span>
+		</div>
+	{/each}
+</section>
 
-			&:not(:last-child) {
-				border-bottom: 1px solid var(--border);
-				padding-bottom: var(--size-7);
-			}
+<PostsList posts={data.posts} />
 
-			.title {
-				font-size: var(--font-size-fluid-3);
-				text-transform: capitalize;
-			}
-
-			.date {
-				color: var(--text-2);
-			}
-
-			.description {
-				margin-top: var(--size-3);
-			}
-		}
-	}
-</style>
+<Connect />
