@@ -21,8 +21,9 @@
 			<ul class="space-y-2">
 				{#each navLinks as link}
 					<li>
-						<a class="text-lg font-medium" href={link.href}>
+						<a class="flex items-center justify-between text-lg hover:bg-stone-400 hover:text-stone-900" href={link.href}>
 							<span>{link.label}</span>
+							<span>&#x2192;</span>
 						</a>
 					</li>
 				{/each}

@@ -2,24 +2,25 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+@font-face {
+    font-family: "BerkeleyMono-Variable";
+    src:
+        url("fonts/BerkeleyMono-Regular.woff2") format("woff2"),
+        url("fonts/BerkeleyMono-Regular.woff") format("woff");
+}
+
 body {
     @apply bg-stone-950 text-stone-600;
-    font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+    /* font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif; */
+    font-family: "BerkeleyMono-Variable", ui-monospace;
     font-size: 15px;
     line-height: 24px;
-    font-weight: 500;
+    font-weight: normal;
 }
 
 .button {
     @apply bg-stone-900 text-stone-200 border border-stone-700 rounded-lg px-4 py-2;
 }
-
-/* CENTER */
-.center {
-    box-sizing: content-box;
-    margin-inline: auto;
-    max-inline-size: var(--measure, 65ch);
-  }
 
 h1 {
     @apply text-3xl text-stone-200;
