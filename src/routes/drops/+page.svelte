@@ -9,25 +9,21 @@
   ];
 </script>
 
-<div class="min-h-screen p-8">
-  <div class="max-w-2xl mx-auto space-y-16">
-    <div>
-      <h1>Drops</h1>
-      <p>Random products I create</p>
-    </div>
-    
-    <div class="space-y-4">
-      {#each tools as tool}
-        <a href={tool.link} class="list-item">
-          <div class="flex items-center gap-4">
-            <img src={tool.image} alt={tool.name} class="w-10 h-10 rounded-lg" loading="lazy" />
-            <div>
-              <h3>{tool.name}</h3>
-              <span class="text-sm text-stone-400">{tool.category} • {tool.price}</span>
-            </div>
-          </div>
-        </a>
-      {/each}
-    </div>
-  </div>
+<div class="space-y-2">
+  <h1>Drops</h1>
+  <p>Random products I create</p>
+</div>
+
+<div class="space-y-4">
+  {#each tools as tool}
+    <a href={tool.link} class="list-item">
+      <div class="flex items-center gap-4">
+        <img src={tool.image} alt={tool.name} class="w-10 h-10 rounded-lg" loading="lazy" />
+        <div>
+          <h3>{tool.name}</h3>
+          <span class="text-sm text-stone-400">{tool.category} • {tool.price}</span>
+        </div>
+      </div>
+    </a>
+  {/each}
 </div>

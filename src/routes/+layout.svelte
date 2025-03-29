@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 	import PageTransition from './transition.svelte'
 	import { title, description,navLinks } from '$lib/config';
@@ -8,17 +8,17 @@
 	let { children, data } = $props();
 </script>
 
-<div class="flex gap-12 mx-auto min-h-screen w-full max-w-4xl px-8">
-	<aside class="sticky top-0 hidden h-screen w-48 py-20 md:block">
-		<nav class="flex h-full w-full flex-col gap-12 overflow-visible" aria-label="Desktop navigation">
-			<div class="flex w-full flex-col items-start gap-4 text-left">
+<div class="relative flex flex-wrap gap-12 box-content mx-auto max-w-3xl">
+	<aside class="flex-grow py-24 sticky top-0 h-screen">
+		<nav class="space-y-6">
+			<div class="space-y-2">
 				<img src="matt-safaii-profile-pic.jpg" alt="Matt Safaii" loading="eager" width="72" height="72" class="rounded-full">
 				<div>
 					<span class="text-lg font-medium">{title}</span>
 					<p>{description}</p>
 				</div>
 			</div>
-			<ul class="space-y-4">
+			<ul class="space-y-2">
 				{#each navLinks as link}
 					<li>
 						<a class="text-lg font-medium" href={link.href}>
@@ -29,12 +29,12 @@
 			</ul>
 		</nav>
 	</aside>
-	<div class="flex h-min w-full flex-col gap-16 overflow-visible py-8 md:gap-24 md:py-20">
+	<main class="basis-0 grow-[999] min-w-[50%] py-24">
 		<PageTransition url={data.url}>
-			<main class="space-y-16">
+			<div class="min-h-screen space-y-16">
 				{@render children?.()}
-			</main>
+			</div>
 		</PageTransition>
 		<Footer />
-	</div>
+	</main>
 </div>
