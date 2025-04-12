@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { formatDate } from '$lib/utils'
-	import * as config from '$lib/config'
-	let { data } = $props()
+	import * as config from '$lib/data/config';
+	import { projects } from '$lib/data/projects';
 </script>
 
 <svelte:head>
@@ -10,19 +9,82 @@
 
 <div class="space-y-2">
 	<h1>Projects</h1>
-	<p>I've worked on (and continue to work on) an absurd number of things. Current tally? 77 projects.</p>
 </div>
 
-<div class="space-y-4">
-	{#each data.projects as project}
-	<article class="list-item">
-		<a 
-			href={project.slug} 
-			class="flex items-center justify-between"
-		>
-			<h3>{project.title}</h3>
-			<!-- <span class="text-sm text-neutral-400">{formatDate(project.date)}</span> -->
-		</a>
-	</article>
-{/each}
+<div class="space-y-6">
+	{#each projects as project}
+		<details class="group" name="project">
+			<summary class="cursor-pointer list-none marker:hidden group-open:marker:block">
+				<div class="flex items-center justify-between">
+					<div class="flex items-center gap-2">
+						<h3>{project.name}</h3>
+						<span class="inline-block text-xs px-2.5 py-0.5 rounded-full ring-1 ring-inset"
+							  class:bg-gray-100={project.status === 'Idea' || project.status === 'Archived'}
+							  class:text-gray-800={project.status === 'Idea' || project.status === 'Archived'}
+							  class:ring-gray-300={project.status === 'Idea' || project.status === 'Archived'}
+							  class:dark:bg-gray-700={project.status === 'Idea' || project.status === 'Archived'}
+							  class:dark:text-gray-300={project.status === 'Idea' || project.status === 'Archived'}
+							  class:dark:ring-gray-600={project.status === 'Idea' || project.status === 'Archived'}
+
+							  class:bg-yellow-100={project.status === 'Exploring'}
+							  class:text-yellow-800={project.status === 'Exploring'}
+							  class:ring-yellow-300={project.status === 'Exploring'}
+							  class:dark:bg-yellow-900={project.status === 'Exploring'}
+							  class:dark:text-yellow-300={project.status === 'Exploring'}
+							  class:dark:ring-yellow-700={project.status === 'Exploring'}
+
+							  class:bg-blue-100={project.status === 'In Progress'}
+							  class:text-blue-800={project.status === 'In Progress'}
+							  class:ring-blue-300={project.status === 'In Progress'}
+							  class:dark:bg-blue-900={project.status === 'In Progress'}
+							  class:dark:text-blue-300={project.status === 'In Progress'}
+							  class:dark:ring-blue-700={project.status === 'In Progress'}
+
+							  class:bg-green-100={project.status === 'Launched'}
+							  class:text-green-800={project.status === 'Launched'}
+							  class:ring-green-300={project.status === 'Launched'}
+							  class:dark:bg-green-900={project.status === 'Launched'}
+							  class:dark:text-green-300={project.status === 'Launched'}
+							  class:dark:ring-green-700={project.status === 'Launched'}
+
+							  class:bg-orange-100={project.status === 'Paused'}
+							  class:text-orange-800={project.status === 'Paused'}
+							  class:ring-orange-300={project.status === 'Paused'}
+							  class:dark:bg-orange-900={project.status === 'Paused'}
+							  class:dark:text-orange-300={project.status === 'Paused'}
+							  class:dark:ring-orange-700={project.status === 'Paused'}
+						>
+							{project.status}
+						</span>
+						{#if project.recruitingStatus}
+							<span class="inline-block text-xs px-2.5 py-0.5 rounded-full ring-1 ring-inset"
+								  class:bg-purple-100={project.recruitingStatus === 'Hiring'}
+								  class:text-purple-800={project.recruitingStatus === 'Hiring'}
+								  class:ring-purple-300={project.recruitingStatus === 'Hiring'}
+								  class:dark:bg-purple-900={project.recruitingStatus === 'Hiring'}
+								  class:dark:text-purple-300={project.recruitingStatus === 'Hiring'}
+								  class:dark:ring-purple-700={project.recruitingStatus === 'Hiring'}
+								  
+								  class:bg-teal-100={project.recruitingStatus === 'Looking for Co-founder'}
+								  class:text-teal-800={project.recruitingStatus === 'Looking for Co-founder'}
+								  class:ring-teal-300={project.recruitingStatus === 'Looking for Co-founder'}
+								  class:dark:bg-teal-900={project.recruitingStatus === 'Looking for Co-founder'}
+								  class:dark:text-teal-300={project.recruitingStatus === 'Looking for Co-founder'}
+								  class:dark:ring-teal-700={project.recruitingStatus === 'Looking for Co-founder'}
+							>
+								{project.recruitingStatus}
+							</span>
+						{/if}
+					</div>
+					<span class="text-neutral-600">{project.date}</span>
+				</div>
+				<p class="text-sm text-neutral-600">{project.summary}</p>
+			</summary>
+			<div class="mt-2 space-y-2">
+				<p>{project.description}</p>
+				<p>{project.outcome}</p>
+				<a href={project.link} class="text-blue-300 dark:text-blue-400 hover:underline">Check it out →</a>
+			</div>
+		</details>
+	{/each}
 </div>

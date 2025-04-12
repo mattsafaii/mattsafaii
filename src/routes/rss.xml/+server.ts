@@ -1,6 +1,6 @@
 export const prerender = true
 
-import * as config from '$lib/config'
+import * as config from '$lib/data/config'
 import type { Post } from '$lib/types'
 
 export async function GET({ fetch }) {

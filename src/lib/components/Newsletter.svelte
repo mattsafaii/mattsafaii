@@ -20,11 +20,11 @@
 			autocapitalize="off"
 			autocorrect="off"
 			spellcheck="false"
-			class="w-full pl-4 py-3 pr-32 rounded-md bg-stone-900 text-stone-300 placeholder:text-stone-500 border border-stone-700 focus:outline-none focus:ring-2 focus:ring-stone-600 text-sm"
+			class="w-full pl-4 py-3 pr-32 rounded-md bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-300 placeholder:text-neutral-600 border border-neutral-200 dark:border-neutral-600 focus:outline-none focus:ring-2 focus:ring-neutral-600 text-sm"
 		/>
 		<button
 			type="submit"
-			class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1 bg-stone-800 text-stone-300 rounded hover:bg-stone-800 transition-colors"
+			class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1 bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-300 rounded hover:bg-neutral-300/80 inset-ring inset-ring-neutral-300 dark:inset-ring-neutral-700 shadow-xs transition-colors"
 		>
 			Subscribe
 		</button>

@@ -16,7 +16,7 @@
         <img src={product.image} alt={product.name} class="w-10 h-10 rounded-lg" loading="lazy" />
         <div>
           <h3>{product.name}</h3>
-          <span class="text-sm text-stone-400">{product.category} • {product.price}</span>
+          <span class="text-sm text-neutral-600">{product.category} • {product.price}</span>
         </div>
       </div>
     </a>

@@ -1,27 +1,11 @@
 <script lang="ts">
-	import * as config from '$lib/config'
-	import PostsList from '$lib/components/PostsList.svelte'
-	import Newsletter from '$lib/components/Newsletter.svelte'
-	import Connect from '$lib/components/Connect.svelte'
-	let { data } = $props()
-
-	const ventures = [
-		{
-			name: 'MGENCY',
-			description: 'Indie product studio',
-			link: 'https://mgency.com'
-		},
-		{
-			name: 'YouTube | Matt Safaii',
-			description: 'Aesthetic tech videos',
-			link: 'https://mgency.com'
-		},
-		{
-			name: 'Zonebrite Solutions',
-			description: 'Local surveillance installation services',
-			link: 'https://zonebrite.com'
-		},
-	]
+	import * as config from '$lib/data/config';
+	import RecentPosts from '$lib/components/RecentPosts.svelte';
+	import Newsletter from '$lib/components/Newsletter.svelte';
+	import Connect from '$lib/components/Connect.svelte';
+	import { projects } from '$lib/data/projects';
+	import RecentProjects from '$lib/components/RecentProjects.svelte';
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -29,29 +13,24 @@
 </svelte:head>
 
 <section class="space-y-4">
-	<h1>Hi. I'm Matt. <br> Designer from Los Angeles</h1>
-	<p>Developer, entrepreneur, and recovering perfectionist.</p>
-	<!-- <div class="flex gap-2">
-		<a href="#" class="button">About me</a>
-		<a href="#" class="button">Email me</a>
-	</div> -->
+	<div class="flex gap-4">
+		<img
+			src="matt-safaii-profile-pic.jpg"
+			alt="Matt Safaii"
+			loading="eager"
+			class="w-24 rounded-full"
+		/>
+		<div>
+			<h1>Hi. I'm Matt.</h1>
+			<p>Developer, entrepreneur, and recovering perfectionist.</p>
+		</div>
+	</div>
 </section>
 
 <Newsletter />
 
-<section class="space-y-4">
-	<div>
-		<h2>Ventures</h2>
-		<p>Businesses I'm actively working on</p>
-	</div>
-	{#each ventures as venture}
-		<div class="list-item">
-			<h3 class="leading-6">{venture.name}</h3>
-			<span>{venture.description}</span>
-		</div>
-	{/each}
-</section>
+<RecentProjects {projects} />
 
-<PostsList posts={data.posts} />
+<RecentPosts posts={data.posts} />
 
 <Connect />

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { formatDate } from '$lib/utils'
-	import * as config from '$lib/config'
+	import { formatDate } from '$lib/utils';
+	import * as config from '$lib/data/config';
 
-	let { data } = $props()
+	let { data } = $props();
 </script>
 
 <svelte:head>
@@ -11,7 +11,7 @@
 
 <section>
 	<h1>Posts in <span class="category">#{data.category}</span></h1>
-	
+
 	{#if data.posts.length > 0}
 		<ul class="posts">
 			{#each data.posts as post}
@@ -31,16 +31,16 @@
 	h1 {
 		margin-bottom: var(--size-7);
 		font-size: var(--font-size-fluid-3);
-		
+
 		.category {
 			color: var(--brand);
 		}
 	}
-	
+
 	.no-posts {
 		color: var(--text-2);
 	}
-	
+
 	.posts {
 		display: grid;
 		gap: var(--size-7);
@@ -67,4 +67,4 @@
 			}
 		}
 	}
-</style> 
+</style>

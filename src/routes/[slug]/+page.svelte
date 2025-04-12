@@ -16,7 +16,7 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<a href={backLink} class="inline-block mb-8 text-stone-400 hover:text-stone-300 transition-colors group"><span class="inline-block transition-transform duration-200 group-hover:-translate-x-1">←</span> Back</a>
+<a href={backLink} class="inline-block mb-8 text-neutral-600 hover:text-neutral-300 transition-colors group"><span class="inline-block transition-transform duration-200 group-hover:-translate-x-1">←</span> Back</a>
 
 <article class="space-y-4">
 	<hgroup>
@@ -36,7 +36,7 @@
 		{/each}
 	</div>
 
-	<div class="prose prose-stone">
+	<div class="prose text-neutral-600 dark:text-neutral-300">
 		<data.content />
 	</div>
 

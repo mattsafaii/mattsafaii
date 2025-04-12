@@ -1,36 +1,29 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
+	import Navigation from '$lib/components/Navigation.svelte';
 	import PageTransition from './transition.svelte'
-	import { title, description,navLinks } from '$lib/config';
-
+	import BlurEffect from '$lib/components/BlurEffect.svelte';
+	import { onNavigate } from '$app/navigation'
 	import '../app.css';
-
 	let { children, data } = $props();
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve()
+				await navigation.complete
+			})
+		})
+	})
 </script>
 
-<div class="relative flex flex-wrap gap-12 box-content mx-auto max-w-3xl">
-	<aside class="flex-grow py-24 sticky top-0 h-screen">
-		<nav class="space-y-6">
-			<div class="space-y-2">
-				<img src="matt-safaii-profile-pic.jpg" alt="Matt Safaii" loading="eager" width="72" height="72" class="rounded-full">
-				<div>
-					<span class="text-lg font-medium">{title}</span>
-					<p>{description}</p>
-				</div>
-			</div>
-			<ul class="space-y-2">
-				{#each navLinks as link}
-					<li>
-						<a class="flex items-center justify-between text-lg hover:bg-stone-400 hover:text-stone-900" href={link.href}>
-							<span>{link.label}</span>
-							<span>&#x2192;</span>
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</nav>
+<div class="relative flex flex-col md:flex-row md:flex-nowrap gap-6 md:gap-12 box-content mx-auto max-w-2xl px-4 md:px-6 lg:px-8">
+	<aside class="py-8 md:py-24 md:sticky md:top-0 md:h-screen">
+		<Navigation />
 	</aside>
-	<main class="basis-0 grow-[999] min-w-[50%] py-24">
+	<main class="w-full md:flex-1 py-8 md:py-24">
 		<PageTransition url={data.url}>
 			<div class="min-h-screen space-y-16">
 				{@render children?.()}
@@ -39,3 +32,4 @@
 		<Footer />
 	</main>
 </div>
+<BlurEffect />

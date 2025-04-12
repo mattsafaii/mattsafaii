@@ -1,16 +1,5 @@
 <script lang="ts">
-  const tools = [
-    { name: 'HEY Email', category: 'Artificial Intelligence', image: '' },
-    { name: 'HEY Calendar', category: 'Productivity', image: '' },
-    { name: 'Reflect Notes', category: 'Productivity', image: '' },
-    { name: 'Things 3', category: 'Development', image: '' },
-    { name: 'MyMind', category: 'Development', image: '' },
-    { name: 'Airtable', category: 'Productivity', image: '' },
-    { name: 'Canva', category: 'Design', image: '' },
-    { name: 'ChatGPT', category: 'Productivity', image: '' },
-    { name: 'Grok', category: 'Productivity', image: '' },
-    { name: 'Zed', category: 'Productivity', image: '' },
-  ];
+import { stack } from '$lib/data/stack';
 </script>
 
 <div class="space-y-2">
@@ -18,16 +7,18 @@
   <p>Tools, resources and software I use daily.</p>
 </div>
 
-<div class="space-y-4">
-  {#each tools as tool}
-    <div class="list-item">
-      <div class="flex items-center gap-4">
-        <!-- <img src={tool.image} alt={tool.name} class="w-10 h-10 rounded-lg" loading="lazy" /> -->
-        <div>
-          <h3>{tool.name}</h3>
-          <p>{tool.category}</p>
-        </div>
+<div class="space-y-8">
+  {#each stack as stack}
+    <details class="group">
+      <summary class="mb-4 text-xl list-none cursor-pointer group-open:mb-4">{stack.Category}</summary>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {#each stack.items as item}
+            <div>
+              <h3 class="font-medium">{item.name}</h3>
+              <p class="text-sm text-neutral-600">{item.description}</p>
+            </div>
+        {/each}
       </div>
-    </div>
+    </details>
   {/each}
 </div>
