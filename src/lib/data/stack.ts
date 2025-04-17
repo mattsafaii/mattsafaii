@@ -1,6 +1,6 @@
 export const stack = [
   {
-    Category: 'Hardware Tools',
+    category: 'Hardware Tools',
     items: [
       { name: 'Mac Mini M2 Pro', description: 'The best Mac Mini' },
       { name: 'LG G-Sync 27" Monitor', description: 'The best monitor' },
@@ -11,25 +11,25 @@ export const stack = [
     ]
   },
   {
-    Category: 'Development Stack',
+    category: 'Development Stack',
     items: [
       { name: 'Zed', description: 'The best code editor' },
     ]
   },
   {
-    Category: 'Cursor Setup',
+    category: 'Cursor Setup',
     items: [
       { name: 'Cursor', description: 'The best code editor' },
     ]
   },
   {
-    Category: 'Raycast Setup',
+    category: 'Raycast Setup',
     items: [
       { name: 'Raycast', description: 'The best productivity app' },
     ]
   },
   {
-    Category: 'Productivity',
+    category: 'Productivity',
     items: [
       { name: 'HEY Email', description: 'The best email client' },
       { name: 'HEY Calendar', description: 'The best calendar' },

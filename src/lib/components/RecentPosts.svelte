@@ -5,9 +5,9 @@
 	export let posts: Post[]
 </script>
 
-<section class="space-y-4">
-	<h2>Letters</h2>
-	<div class="space-y-2">
+<section class="space-y-2">
+	<h2>Articles</h2>
+	<div>
 		{#each posts.slice(0, 3) as post}
 		<article class="list-item">
 			<a 
@@ -22,8 +22,8 @@
 	</div>
 	<a 
 		href="/articles" 
-		class="inline-block text-sm text-neutral-600/80 dark:text-neutral-300 hover:text-neutral-600 transition-colors mt-4"
+		class="inline-block text-sm text-neutral-600/80 dark:text-neutral-300 hover:text-neutral-600 transition-colors"
 	>
-		View all →
+		View all articles →
 	</a>
 </section> 

@@ -13,7 +13,7 @@
 </svelte:head>
 
 <section class="space-y-4">
-	<div class="flex gap-4">
+	<div class="flex items-center gap-4">
 		<img
 			src="matt-safaii-profile-pic.jpg"
 			alt="Matt Safaii"
@@ -22,7 +22,7 @@
 		/>
 		<div>
 			<h1>Hi. I'm Matt.</h1>
-			<p>Developer, entrepreneur, and recovering perfectionist.</p>
+			<p>I'm a developer, creator, and recovering perfectionist. Currently focused on building <a href="/projects">my own projects</a>.</p>
 		</div>
 	</div>
 </section>

@@ -9,62 +9,20 @@
 	<title>Posts in #{data.category} | {config.title}</title>
 </svelte:head>
 
-<section>
-	<h1>Posts in <span class="category">#{data.category}</span></h1>
+<div>
+	<h1>Topics/<span class="category">{data.category.charAt(0).toUpperCase() + data.category.slice(1)}</span></h1>
+	<p class="category-count">{data.posts.length} posts in #{data.category}</p>
+</div>
 
-	{#if data.posts.length > 0}
-		<ul class="posts">
-			{#each data.posts as post}
-				<li class="post">
-					<a href="/{post.slug}" class="title">{post.title}</a>
-					<p class="date">{formatDate(post.date)}</p>
-					<p class="description">{post.description}</p>
-				</li>
-			{/each}
-		</ul>
-	{:else}
-		<p class="no-posts">No posts found in this category.</p>
-	{/if}
-</section>
-
-<style>
-	h1 {
-		margin-bottom: var(--size-7);
-		font-size: var(--font-size-fluid-3);
-
-		.category {
-			color: var(--brand);
-		}
-	}
-
-	.no-posts {
-		color: var(--text-2);
-	}
-
-	.posts {
-		display: grid;
-		gap: var(--size-7);
-
-		.post {
-			max-inline-size: var(--size-content-3);
-
-			&:not(:last-child) {
-				border-bottom: 1px solid var(--border);
-				padding-bottom: var(--size-7);
-			}
-
-			.title {
-				font-size: var(--font-size-fluid-2);
-				text-transform: capitalize;
-			}
-
-			.date {
-				color: var(--text-2);
-			}
-
-			.description {
-				margin-top: var(--size-3);
-			}
-		}
-	}
-</style>
+{#if data.posts.length > 0}
+	<ul class="space-y-2">
+		{#each data.posts as post}
+			<li class="flex justify-between items-center">
+				<a href="/{post.slug}" class="title">{post.title}</a>
+				<p class="date text-sm text-neutral-600/50 dark:text-neutral-300/50">{formatDate(post.date)}</p>
+			</li>
+		{/each}
+	</ul>
+{:else}
+	<p class="no-posts">No posts found in this category.</p>
+{/if}

@@ -1,6 +1,23 @@
 <script lang="ts">
 	import * as config from '$lib/data/config';
 	import { projects } from '$lib/data/projects';
+	import { onMount } from 'svelte';
+
+	let detailsElements: HTMLDetailsElement[] = [];
+
+	onMount(() => {
+		const handleClick = (e: MouseEvent) => {
+			const target = e.target as HTMLElement;
+			if (!target.closest('details')) {
+				detailsElements.forEach(details => {
+					if (details.open) details.open = false;
+				});
+			}
+		};
+
+		document.addEventListener('click', handleClick);
+		return () => document.removeEventListener('click', handleClick);
+	});
 </script>
 
 <svelte:head>
@@ -11,10 +28,14 @@
 	<h1>Projects</h1>
 </div>
 
-<div class="space-y-6">
-	{#each projects as project}
-		<details class="group" name="project">
-			<summary class="cursor-pointer list-none marker:hidden group-open:marker:block">
+<div class="space-y-2 [&:has(details[open])>details:not([open])]:opacity-50">
+	{#each projects as project, i}
+		<details 
+			class="group -mx-4 rounded-lg transition-[colors,opacity] duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 [&[open]]:bg-neutral-100 dark:[&[open]]:bg-neutral-800 p-4"
+			name="project"
+			bind:this={detailsElements[i]}
+		>
+			<summary class="cursor-pointer list-none marker:hidden group-open:marker:block -m-4 p-4">
 				<div class="flex items-center justify-between">
 					<div class="flex items-center gap-2">
 						<h3>{project.name}</h3>
@@ -64,7 +85,7 @@
 								  class:dark:bg-purple-900={project.recruitingStatus === 'Hiring'}
 								  class:dark:text-purple-300={project.recruitingStatus === 'Hiring'}
 								  class:dark:ring-purple-700={project.recruitingStatus === 'Hiring'}
-								  
+
 								  class:bg-teal-100={project.recruitingStatus === 'Looking for Co-founder'}
 								  class:text-teal-800={project.recruitingStatus === 'Looking for Co-founder'}
 								  class:ring-teal-300={project.recruitingStatus === 'Looking for Co-founder'}
@@ -78,12 +99,12 @@
 					</div>
 					<span class="text-neutral-600">{project.date}</span>
 				</div>
-				<p class="text-sm text-neutral-600">{project.summary}</p>
+				<p class="text-sm text-neutral-600 mb-0!">{project.summary}</p>
 			</summary>
-			<div class="mt-2 space-y-2">
+			<div class="mt-2 space-y-2 pt-0">
 				<p>{project.description}</p>
 				<p>{project.outcome}</p>
-				<a href={project.link} class="text-blue-300 dark:text-blue-400 hover:underline">Check it out →</a>
+				<a href={project.link} class="text-blue-500 dark:text-blue-400 hover:underline">Check it out →</a>
 			</div>
 		</details>
 	{/each}

@@ -6,7 +6,7 @@
 	}>()
 </script>
 
-<section class="space-y-4">
+<section>
 	<div>
 		<h2>{title}</h2>
 		<p>{description}</p>

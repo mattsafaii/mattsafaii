@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Home, Articles, Projects, Drops, Stack, Contact } from '$lib/Icons';
+	import { Home, Articles, Projects, Drops, Stack, Contact, Mail, X, Github } from '$lib/Icons';
 
 	let { name, class: className } = $props();
 </script>
@@ -27,5 +27,17 @@
 
 	{#if name == 'contact'}
 		<Contact />
+	{/if}
+
+	{#if name == 'mail'}
+		<Mail />
+	{/if}
+	
+	{#if name == 'x'}
+		<X />
+	{/if}
+
+	{#if name == 'github'}
+		<Github />
 	{/if}
 </span>

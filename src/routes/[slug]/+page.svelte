@@ -4,7 +4,7 @@
 	let { data } = $props()
 
 	const backLink = $derived(
-		data.type === 'post' ? '/letters' : 
+		data.type === 'post' ? '/articles' : 
 		data.type === 'interview' ? '/interviews' : 
 		'/projects'
 	)
