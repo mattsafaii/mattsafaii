@@ -38,7 +38,7 @@ export const drops = [
         {
           name: 'Shirt',
           description: 'The best Mac Mini',
-          image: 'product3.png',
+          image: 'product3.jpg',
           price: '$100',
           link: '#',
       }

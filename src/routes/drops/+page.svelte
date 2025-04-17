@@ -2,8 +2,10 @@
   import * as config from '$lib/data/config';
   import { drops } from '$lib/data/drops';
   import { onMount } from 'svelte';
+  import Mask from '$lib/components/Mask.svelte';
 
   let detailsElements: HTMLDetailsElement[] = [];
+  let hoveredCategory: string | null = null;
 
   onMount(() => {
     const handleClick = (e: MouseEvent) => {
@@ -36,25 +38,22 @@
 			name="project"
       open={i === 0}
 			bind:this={detailsElements[i]}
+      on:mouseenter={() => hoveredCategory = drop.category}
+			on:mouseleave={() => hoveredCategory = null}
 		>
 			<summary class="cursor-pointer list-none marker:hidden group-open:marker:block -m-4 p-4">
         <div class="flex items-center justify-between cursor-pointer list-none marker:hidden group-open:marker:block -m-4 p-4">
           <h3 class="font-medium">{drop.category}</h3>
           {#if drop.category !== 'Latest Drop'}
             <div class="flex items-center">
-              <div class="flex flex-row-reverse -space-x-3 space-x-reverse">
-                {#each drop.items as item}
-                  <div class="relative w-10 h-10 rounded-full ring-2 ring-neutral-50 dark:ring-neutral-700">
-                    <img 
-                      src={item.image} 
-                      alt={item.name} 
-                      class="w-full h-full rounded-full object-cover" 
-                      loading="lazy" 
-                    />
-                  </div>
-                {/each}
-              </div>
-              <span class="ml-4 text-sm text-neutral-500 dark:text-neutral-400">{drop.items.length} {drop.items.length === 1 ? 'item' : 'items'}</span>
+              <Mask 
+              images={drop.items.map(item => ({ 
+                  src: item.image, 
+                  alt: item.name, 
+                  bgClass: 'bg-neutral-50 dark:bg-neutral-300' 
+              }))} 
+              showCount={hoveredCategory === drop.category}
+          />
             </div>
           {/if}
         </div>
