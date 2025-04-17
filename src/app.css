@@ -119,3 +119,8 @@ p {
 		animation: none !important;
 	}
 }
+
+details > summary::-webkit-details-marker,
+details > summary::marker {
+    display: none;
+}
