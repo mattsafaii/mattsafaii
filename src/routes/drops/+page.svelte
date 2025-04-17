@@ -63,7 +63,7 @@
         <div class="mt-2 text-neutral-500 dark:text-neutral-400">No items available in this category.</div>
       {:else}
         <div 
-          class="mt-2 space-y-2 pt-0 grid gap-4 {drop.category === 'Latest Drop' ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}"
+          class="mt-2 space-y-2 pt-0 grid gap-4 {drop.category === 'Latest Drop' ? 'grid-cols-1' : 'grid-cols-2 md:grid-cols-2 lg:grid-cols-3'}"
         >
           {#each drop.items as item}
             {#if drop.category === 'Latest Drop'}
