@@ -20,7 +20,7 @@
 </script>
 
 <div class="relative flex flex-col md:flex-row md:flex-nowrap gap-6 md:gap-12 box-content mx-auto max-w-2xl px-4 md:px-6 lg:px-8">
-	<aside class="py-8 md:py-24 md:sticky md:top-0 md:h-screen">
+	<aside class="md:py-24 md:sticky md:top-0 md:h-screen">
 		<Navigation />
 	</aside>
 	<main class="w-full md:flex-1 py-8 md:py-24">
