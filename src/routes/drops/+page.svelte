@@ -59,11 +59,12 @@
           {/if}
         </div>
 			</summary>
+      <div class="mt-8">
       {#if drop.items.length === 0}
-        <div class="mt-2 text-neutral-500 dark:text-neutral-400">No items available in this category.</div>
+        <div class="text-neutral-500 dark:text-neutral-400">No items available in this category.</div>
       {:else}
         <div 
-          class="mt-2 space-y-2 pt-0 grid gap-4 {drop.category === 'Latest Drop' ? 'grid-cols-1' : 'grid-cols-2 md:grid-cols-2 lg:grid-cols-3'}"
+          class="space-y-2 pt-0 grid gap-4 {drop.category === 'Latest Drop' ? 'grid-cols-1' : 'grid-cols-2 md:grid-cols-2 lg:grid-cols-3'}"
         >
           {#each drop.items as item}
             {#if drop.category === 'Latest Drop'}
@@ -86,6 +87,7 @@
           {/each}
         </div>
       {/if}
+      </div>
 		</details>
 	{/each}
 </div>

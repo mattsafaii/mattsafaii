@@ -43,7 +43,7 @@ export const projects: ProjectType[] = [
 		summary: 'A surveillance hardware and software company.',
 		link: 'https://serafinsecurity.com',
 		status: 'Paused',
-		description: '', 
+		description: 'Building the first of its kind 5G-enabled surveillance product with AI onboard. Manufactued in the USA.',
 		outcome: '',
 	},
 	{
