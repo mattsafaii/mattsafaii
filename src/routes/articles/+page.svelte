@@ -18,7 +18,7 @@
 	/>
 </div>
 
-<section>
+<section class="space-y-4">
 	{#each data.posts as post (post.slug)}
 		<article class="list-item">
 			<a href={post.slug} class="flex items-center justify-between">
