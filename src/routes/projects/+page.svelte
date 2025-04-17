@@ -35,7 +35,7 @@
 			name="project"
 			bind:this={detailsElements[i]}
 		>
-			<summary class="cursor-pointer list-none marker:hidden group-open:marker:block -m-4 p-4">
+			<summary class="cursor-pointer list-none marker:hidden -m-4 p-4">
 				<div class="flex items-center justify-between">
 					<div class="flex items-center gap-2">
 						<h3>{project.name}</h3>
