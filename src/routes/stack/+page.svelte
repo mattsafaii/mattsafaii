@@ -32,7 +32,7 @@
 </div>
 
 <div class="space-y-2 [&:has(details[open])>details:not([open])]:opacity-50">
-	{#each stack as category}
+	{#each stack as category, i}
 		<details 
 			class="group -mx-4 rounded-lg transition-[colors,opacity] duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 [&[open]]:bg-neutral-100 dark:[&[open]]:bg-neutral-800 p-4"
 			name="project"

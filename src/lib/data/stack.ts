@@ -20,6 +20,7 @@ export const stack = [
       { name: 'Tailwind CSS', description: 'The best CSS framework', image: '/stack/tailwind.svg', link: 'https://tailwindcss.com' },
       { name: 'Ruby on Rails', description: 'My favorite framework', image: '/stack/rails.svg', link: 'https://rubyonrails.org' },
       { name: 'SQLite', description: 'The best database', image: '/stack/sqlite.svg', link: 'https://sqlite.org' },
+      { name: 'Plausible Analytics', description: 'The best analytics tool', image: '/stack/plausible.jpg', link: 'https://plausible.io' },
     ]
   },
   {

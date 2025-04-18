@@ -8,14 +8,16 @@
 		.slice(0, 3);
 </script>
 
-<section class="space-y-2">
+<section class="space-y-4">
 	<h2>Recent Projects</h2>
-	{#each recentProjects as project (project.name)}
-		<div class="list-item">
-			<h3 class="leading-6">{project.name}</h3>
-			<span>{project.summary}</span>
-		</div>
-	{/each}
+	<div class="space-y-2">
+		{#each recentProjects as project (project.name)}
+			<div class="list-item">
+				<h3 class="leading-6">{project.name}</h3>
+				<span>{project.summary}</span>
+			</div>
+		{/each}
+	</div>
 	{#if projects.length > 3}
 		<a 
 			href="/projects" 

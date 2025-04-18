@@ -5,9 +5,9 @@
 	export let posts: Post[]
 </script>
 
-<section class="space-y-2">
+<section class="space-y-4">
 	<h2>Articles</h2>
-	<div>
+	<div class="space-y-2">
 		{#each posts.slice(0, 3) as post}
 		<article class="list-item">
 			<a 

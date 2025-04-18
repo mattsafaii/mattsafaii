@@ -9,7 +9,7 @@
 	class="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 md:inset-y-0 md:left-4 md:flex md:translate-x-0 md:items-center"
 >
 	<ul
-		class="flex gap-2 rounded-full bg-neutral-100 px-2 py-0.5 inset-ring inset-ring-neutral-200 backdrop-blur-sm md:flex-col md:px-0.5 md:py-1.5 dark:bg-neutral-900/90 dark:inset-ring-neutral-800"
+		class="flex gap-4 rounded-full bg-neutral-100 px-2 py-0.5 inset-ring inset-ring-neutral-200 backdrop-blur-sm md:flex-col md:px-0.5 md:py-1.5 dark:bg-neutral-900/90 dark:inset-ring-neutral-800"
 	>
 		{#each navLinks as link (link.id)}
 			<li>

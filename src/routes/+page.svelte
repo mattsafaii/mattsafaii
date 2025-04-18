@@ -13,16 +13,16 @@
 </svelte:head>
 
 <section class="space-y-4">
-	<div class="flex items-center gap-4">
+	<div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
 		<img
 			src="matt-safaii-profile-pic.jpg"
 			alt="Matt Safaii"
 			loading="eager"
 			class="w-24 rounded-full"
 		/>
-		<div>
+		<div class="space-y-2">
 			<h1>Hi. I'm Matt.</h1>
-			<p>I'm a developer, creator, and recovering perfectionist. Currently focused on building <a href="/projects">my own projects</a>.</p>
+			<p>I'm a developer, creator, and recovering perfectionist. Currently focused on building my own projects.</p>
 		</div>
 	</div>
 </section>
