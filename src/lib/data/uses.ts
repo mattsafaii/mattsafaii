@@ -11,7 +11,7 @@ export const uses = [
     ]
   },
   {
-    category: 'Development uses',
+    category: 'Development Stack',
     items: [
       { name: 'Zed', description: 'The best code editor', image: '/uses/zed.png', link: 'https://zed.dev' },
       { name: 'Cursor', description: 'The best code editor', image: '/uses/cursor.jpg', link: 'https://cursor.sh' },
