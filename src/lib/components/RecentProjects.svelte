@@ -9,7 +9,7 @@
 </script>
 
 <section class="space-y-4">
-	<h2>Recent Projects</h2>
+	<h2>Creating</h2>
 	<div class="space-y-2">
 		{#each recentProjects as project (project.name)}
 			<div class="list-item">
@@ -21,7 +21,7 @@
 	{#if projects.length > 3}
 		<a 
 			href="/projects" 
-			class="inline-block text-sm text-neutral-600/80 dark:text-neutral-300 hover:text-neutral-600 transition-colors"
+			class="inline-block text-sm text-neutral-600/80 dark:text-neutral-300/80 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
 		>
 			View all projects →
 		</a>

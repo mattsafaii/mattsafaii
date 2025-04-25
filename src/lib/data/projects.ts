@@ -19,6 +19,15 @@ export interface ProjectType {
 
 export const projects: ProjectType[] = [
 	{
+		name: 'Voxx Reviews',
+		date: '2025',
+		summary: 'Anonymous reviews posted to X.',
+		link: 'https://voxxreviews.com',
+		status: 'Launched',
+		description: 'This is a simple app that allows users to post anonymous reviews to X through the @VoxxReviews account.', 
+		outcome: '',
+	},
+	{
 		name: 'Hookah Maps',
 		date: '2025',
 		summary: 'Yelp for hookah lounges',

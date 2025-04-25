@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as config from '$lib/data/config';
-  import { stack } from '$lib/data/stack';
+  import { uses } from '$lib/data/uses';
   import { onMount } from 'svelte';
   import Mask from '$lib/components/Mask.svelte';
 
@@ -27,12 +27,12 @@
 </svelte:head>
 
 <div class="space-y-2">
-  <h1>Stack</h1>
+  <h1>Uses</h1>
   <p>Tools, resources and software I use daily.</p>
 </div>
 
 <div class="space-y-2 [&:has(details[open])>details:not([open])]:opacity-50">
-	{#each stack as category, i}
+	{#each uses as category, i}
 		<details 
 			class="group -mx-4 rounded-lg transition-[colors,opacity] duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 [&[open]]:bg-neutral-100 dark:[&[open]]:bg-neutral-800 p-4"
 			name="project"

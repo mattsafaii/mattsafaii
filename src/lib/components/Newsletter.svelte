@@ -1,6 +1,6 @@
 <script lang="ts">
 	/** @runes */
-	let { title = "Newsletter", description = "I'm sending out an irregular newsletter sometimes. If you wanna be part of the subscriber list, I'd love to have you sign up." } = $props<{
+	let { title = "The Newsletter", description = "I’m building a bunch of things. Whenever I learn something useful or find a good tool, I’ll share it here." } = $props<{
 		title?: string;
 		description?: string;
 	}>()

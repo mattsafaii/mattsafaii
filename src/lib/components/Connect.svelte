@@ -3,8 +3,8 @@
     import Icon from './Icon.svelte';
 </script>
 
-<footer class="space-y-10">
-    <div class="space-y-8">
+<footer class="space-y-12">
+    <div class="space-y-10">
         <div class="space-y-4">
             <h2>Let's Connect</h2>
             <p>Whether you have a project in mind, a question, or just want to say hi, feel free to reach out.</p>

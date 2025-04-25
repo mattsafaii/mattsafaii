@@ -22,7 +22,7 @@
 	</div>
 	<a 
 		href="/articles" 
-		class="inline-block text-sm text-neutral-600/80 dark:text-neutral-300 hover:text-neutral-600 transition-colors"
+		class="inline-block text-sm text-neutral-600/80 dark:text-neutral-300/80 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
 	>
 		View all articles →
 	</a>

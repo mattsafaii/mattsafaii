@@ -25,7 +25,7 @@
 	</aside>
 	<main class="w-full flex-1 py-8 md:py-24">
 		<PageTransition url={data.url}>
-			<div class="min-h-screen space-y-8 md:space-y-16">
+			<div class="min-h-screen space-y-8 md:space-y-10 *:bg-neutral-800/20 *:rounded-lg *:p-4">
 				{@render children?.()}
 			</div>
 		</PageTransition>

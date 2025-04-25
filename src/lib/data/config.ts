@@ -4,7 +4,7 @@ export const title = 'Matt Safaii';
 export const description = 'Software Engineer';
 export const url = dev ? 'http://localhost:5173/' : 'https://mattsafaii.com/';
 
-export type IconName = 'home' | 'projects' | 'stack' | 'drops' | 'articles' | 'contact';
+export type IconName = 'home' | 'projects' | 'uses' | 'drops' | 'articles' | 'contact';
 
 type NavLink = {
 	id: number;
@@ -18,6 +18,6 @@ export const navLinks: NavLink[] = [
 	{ id: 1, href: '/articles', icon: 'articles', label: 'Articles' },
 	{ id: 2, href: '/projects', icon: 'projects', label: 'Projects' },
 	{ id: 3, href: '/drops', icon: 'drops', label: 'Drops' },
-	{ id: 4, href: '/stack', icon: 'stack', label: 'Stack' },
+	{ id: 4, href: '/uses', icon: 'uses', label: 'Uses' },
 	{ id: 6, href: '/contact', icon: 'contact', label: 'Contact' }
 ];
